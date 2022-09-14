@@ -1,0 +1,12 @@
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+
+<h2> <%= @booking.name %> </h2>
+<h2> <%= @booking.start_date %> </h2>
+<h2> <%= @booking.end_date %> </h2>
+
+
+<%= link_to "Delete that Booking", flat_booking_path(@booking.flat_id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<%= link_to "Edit", edit_flat_booking_path(@booking.flat_id, @booking.id) %>
+<%= link_to "Back", flat_path(@booking.flat_id) %>

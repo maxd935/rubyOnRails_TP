@@ -1,0 +1,33 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+<%= simple_form_for [@flat, @booking],
+  html: {
+    data: {
+      controller: 'flatpickr'
+    }
+  } do |f| 
+%>
+  <%= f.input :name %>
+
+
+  <%= f.input :start_date,
+      as: :string,
+      input_html: {
+        data: {
+          flatpickr_target: 'startDateInput',
+        }
+      } 
+  %>
+
+  <%= f.input :end_date,
+    as: :string,
+    input_html: {
+      data: {
+        flatpickr_target: 'endDateInput'
+      }
+    } 
+  %>
+
+  <%= f.submit 'Book now!', class: 'btn btn-primary' %>
+<% end %>
